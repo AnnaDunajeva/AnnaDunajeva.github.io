@@ -1,8 +1,6 @@
 module.exports = {
     entry: {
-        index: './dev/home.js',
-        projects: './dev/projects.js',
-        cv: './dev/cv.js'
+        index: './dev/home.js'
     },
     output: {
         filename: '[name].js',
@@ -21,5 +19,6 @@ module.exports = {
             use: ["style-loader", "css-loader", "sass-loader"]
         }
         ]
-    }
+    },
+    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development'
 }
