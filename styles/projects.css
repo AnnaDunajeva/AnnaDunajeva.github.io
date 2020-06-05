@@ -1,3 +1,7 @@
+html {
+  display: block;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,6 +44,8 @@
 
 body {
   width: 100vw;
+  color: #d7d1db;
+  background: #2a272e;
   color: var(--text-color-white);
   background: var(--main-dark-color);
 }
@@ -63,6 +69,8 @@ body, html {
   word-spacing: 6px;
 }
 .logo:hover {
+  color: #ff0080;
+  text-shadow: 3px 3px 0px #3cf2ff;
   color: var(--text-hover-color);
   text-shadow: 3px 3px 0px var(--text-shadow-color);
 }
@@ -94,6 +102,8 @@ body, html {
 }
 .nav button:hover,
 .nav a:hover {
+  color: #ff0080;
+  text-shadow: 3px 3px 0px #3cf2ff;
   color: var(--text-hover-color);
   text-shadow: 3px 3px 0px var(--text-shadow-color);
 }
@@ -112,19 +122,25 @@ body, html {
 }
 
 .button-main {
+  border: 1px solid #d7d1db;
   border: 1px solid var(--text-color-white);
 }
 
 .button-main:hover {
+  background-color: #d7d1db;
+  color: #2a272e !important;
   background-color: var(--text-color-white);
   color: var(--main-dark-color) !important;
 }
 
 .button-main:focus-within {
   outline: none;
+  background-color: #ff0080;
   background-color: var(--text-hover-color);
   color: white !important;
+  border: 1px solid #ff0080;
   border: 1px solid var(--text-hover-color);
+  box-shadow: 0 0 0 0.15rem #2a272e, 0 0 0 0.25rem #3cf2ff;
   box-shadow: 0 0 0 0.15rem var(--main-dark-color), 0 0 0 0.25rem var(--text-shadow-color);
 }
 
