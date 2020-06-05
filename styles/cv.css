@@ -41,8 +41,21 @@
 body {
   width: 100vw;
   color: var(--text-color-white);
-  overflow-x: hidden;
   background: var(--main-dark-color);
+}
+
+body, html {
+  overflow: hidden;
+  height: 100%;
+}
+
+.viewport {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 .logo {

@@ -5,18 +5,7 @@
 }
 $parallax-perspective: 8px;
 
-body, html {
-    overflow: hidden;
-    height: 100%; //important for scrollbar to work
-    background-color: var(--main-bg-color);
-}
 .viewport {
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
     perspective: $parallax-perspective;
 }
 .parallax-container {
