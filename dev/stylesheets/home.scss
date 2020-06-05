@@ -1,0 +1,396 @@
+@use 'common';
+@function parallax-scale-factor($z-distance, $parallaxPerspective) {
+    $result: ($parallaxPerspective - $z-distance) / $parallaxPerspective;
+    @return $result;
+}
+$parallax-perspective: 8px;
+
+body, html {
+    overflow: hidden;
+    height: 100%; //important for scrollbar to work
+    background-color: var(--main-bg-color);
+}
+.viewport {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    perspective: $parallax-perspective;
+}
+.parallax-container {
+    transform-style: preserve-3d;
+}
+
+.container-header {
+    transform: scale(1.6);
+    position: relative;
+    // background-color: var(--main-dark-color);
+    background: radial-gradient(circle, rgb(81, 48, 82) 0%, rgb(77, 41, 75) 4%, rgb(56, 35, 55) 12%, rgb(45, 34, 46) 27%, var(--main-dark-color) 100%);
+    // background: radial-gradient(circle, rgba(147,16,98,1) 0%, rgba(102,9,71,1) 4%, rgba(75,19,57,1) 12%, rgb(46, 30, 43) 27%, var(--main-dark-color) 100%);
+}
+.lines-bg {
+    height: 100%;
+    width: 100vw;
+}
+.header-main {
+    transform: translateZ(4px) scale(parallax-scale-factor(4, $parallax-perspective));
+    font-size: 100px;
+    position: absolute;
+    top: -1vh; left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        position: absolute;
+        transition: font-size 0.1s linear;
+
+        &:hover {
+            font-size: 130px;
+            transition: font-size 0.1s linear;
+        }
+    }
+}
+.about-me-container {
+    transform: translateZ(5px) scale(parallax-scale-factor(5, $parallax-perspective));
+    margin-top: -30vh;
+    height: 100vh;
+    width: 100vw;
+    background: var(--main-bg-color);
+}
+.parallax-about-me-container {
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    transform: translateZ(6px) scale(parallax-scale-factor(6, $parallax-perspective));
+    margin-top: -100vh;
+}
+.about-me-data-container {  
+    margin: 0 auto;
+    display: flex;
+    // width: 60vw;
+    // height: 35vw;
+    width: 885px;
+    height: 520px;
+    background-color: var(--main-dark-color);
+    color: var(--text-color-white);
+    -webkit-box-shadow: var(--container-shadow);
+    -moz-box-shadow: var(--container-shadow);
+    box-shadow: var(--container-shadow);
+}
+.profile-img {
+    object-fit: cover;
+    height: inherit;
+}
+.about-text {
+    position: relative;
+
+    h3 {
+        position: absolute;
+        bottom: 5px; left: 45px;
+        // font-size: 3.2vw;
+        font-size: 47px;
+        text-transform: uppercase;
+        transform-origin: left;
+        transform: rotate(-90deg);
+    }
+    p {
+        // font-size: 1.5vw;
+        font-size: 22px;
+        line-height: 1.5em;
+        margin: 40px 50px 30px 110px;
+    }
+}
+
+.github-icon {
+    height: 40px;
+    width: 40px;
+    fill: var(--text-color-white);
+    position: absolute;
+    bottom: 30px; left: 110px;
+    
+    &:hover {
+        cursor: pointer;
+        fill: var(--text-hover-color);
+        filter: drop-shadow( 3px 3px 0px var(--text-shadow-color));
+    }
+}
+
+
+
+.glitch {
+    text-transform: uppercase;
+    color: var(--text-color-white);
+    // background-color: black;
+    // position: relative;
+    &::before,
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        // background: black;
+        color: var(--text-color-white);
+        clip: rect(0, 900px, 0, 0);
+
+    }
+
+    &::before {
+        left: 2px;
+        text-shadow: 3px 0 #105bb1;
+        animation: glitch-effect 4s infinite linear alternate-reverse;
+    }
+
+    &::after {
+        left: 1px;
+        text-shadow: -3px 0 var(--text-hover-color);
+        animation: glitch-effect 3s infinite linear alternate-reverse;
+    }
+}
+
+@keyframes glitch-effect{
+    $steps: 25;
+
+    @for $i from 0 through $steps{
+        #{percentage($i*(1/$steps))}{
+            clip:rect(random(120)+px,9999px,random(120)+px,0);
+        }
+    }   
+}
+@keyframes glitch-effect-mobile{
+    $steps: 25;
+
+    @for $i from 0 through $steps{
+        #{percentage($i*(1/$steps))}{
+            clip:rect(random(130)+px,9999px,random(130)+px,0);
+        }
+    }
+}
+
+.dash-long {
+    stroke-dasharray: 122;
+}
+.dash-medium {
+    stroke-dasharray: 90;
+}
+.dash-medium-long {
+    stroke-dasharray: 67;
+}
+.dash-short {
+    stroke-dasharray: 37;
+}
+.dash-animation {
+    animation: line-move 6s linear;
+    animation-iteration-count: infinite;
+    // animation-direction: reverse;
+}
+@keyframes line-move {
+    to {
+        stroke-dashoffset: 2000;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header-main {
+        font-size: 13vw;
+        top: -1vh; left: 10px;
+    
+        h3 {    
+            &:hover {
+                font-size: 15vw;
+            }
+        }
+    }
+    .about-me-container {
+        transform: translateZ(4px) scale(parallax-scale-factor(4, $parallax-perspective));
+        margin-top: 0vh;
+        height: 100vh;
+    }
+    .parallax-about-me-container {
+        transform: translateZ(5px) scale(parallax-scale-factor(5, $parallax-perspective));
+        height: 100vh;
+        margin-top: -100vh;
+    }
+    .about-me-data-container {  
+        margin: 0 auto;
+        // margin-top: -28vh;
+        margin-top: -47vw;
+        width: 85vw;
+        height: 52vh;
+        display: block;
+    }
+    .profile-img {
+        object-fit: cover;
+        width: inherit;
+    }
+    .about-text {  
+        background: var(--main-dark-color);  
+        padding: 3vh;
+        h3 {
+            position: static;
+            font-size: 5.5vw;
+            margin-bottom: 2vh;
+            text-transform: uppercase;
+            transform: none;
+        }
+        p {
+            font-size: 3.6vw;
+            line-height: 1.5em;
+            margin: 0 0 2vh 0;
+        }
+    }
+    
+    .github-icon {
+        height: 30px;
+        width: 30px;
+        fill: var(--text-color-white);
+        position: static;
+    }
+    .glitch {
+        &::before {
+            left: 2px;
+            text-shadow: 3px 0 #105bb1;
+            animation: glitch-effect-mobile 4s infinite linear alternate-reverse;
+        }
+    
+        &::after {
+            left: 1px;
+            text-shadow: -3px 0 var(--text-hover-color);
+            animation: glitch-effect-mobile 3s infinite linear alternate-reverse;
+        }
+    }
+}
+// @media only screen and (min-width: 501px) and (max-width: 800px) {
+//     .header-main {
+//         font-size: 9vw;
+    
+//         h3 {    
+//             &:hover {
+//                 font-size: 11vw;
+//             }
+//         }
+//     }
+//     .about-me-container {
+//         transform: translateZ(4px) scale(parallax-scale-factor(4, $parallax-perspective));
+//         margin-top: 0vh;
+//         height: 100vh;
+//     }
+//     .parallax-about-me-container {
+//         transform: translateZ(5px) scale(parallax-scale-factor(5, $parallax-perspective));
+//         height: 100vh;
+//         margin-top: -100vh;
+//     }
+//     .about-me-data-container {  
+//         margin: 0 auto;
+//         margin-top: -47vw;
+//         width: 55vw;
+//         height: 45vw;
+//         display: block;
+//     }
+//     .profile-img {
+//         object-fit: cover;
+//         width: inherit;
+//     }
+//     .about-text {  
+//         background: var(--main-dark-color);  
+//         padding: 3vh;
+//         h3 {
+//             position: static;
+//             font-size: 4vw;
+//             margin-bottom: 2vh;
+//             text-transform: uppercase;
+//             transform: none;
+//         }
+//         p {
+//             font-size: 2.7vw;
+//             line-height: 1.5em;
+//             margin: 0 0 2vh 0;
+//         }
+//     }
+    
+//     .github-icon {
+//         height: 40px;
+//         width: 40px;
+//         fill: var(--text-color-white);
+//         position: static;
+//     }
+// }
+@media only screen and (min-width: 501px) and (max-width: 1000px) {
+    .header-main {
+        font-size: 9vw;
+    
+        h3 {    
+            &:hover {
+                font-size: 11vw;
+            }
+        }
+    }
+    .about-me-data-container {  
+        width: 80vw;
+        height: 50vw;
+    }
+    .profile-img {
+        object-fit: cover;
+        width: 40%;
+    }
+    .about-text {  
+        background: var(--main-dark-color);  
+        padding: 5vw;
+        h3 {
+            position: static;
+            font-size: 3.5vw;
+            margin-bottom: 2vh;
+            text-transform: uppercase;
+            transform: none;
+        }
+        p {
+            font-size: 2vw;
+            line-height: 1.5em;
+            margin: 0 0 2vh 0;
+        }
+    }
+    
+    .github-icon {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        bottom: 30px; left: 40px;
+    }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1200px) {
+    .about-me-data-container {  
+        width: 70vw;
+        height: 40vw;
+    }
+    .profile-img {
+        object-fit: cover;
+        width: 40%;
+    }
+    .about-text {   
+        padding: 50px;
+        h3 {
+            position: static;
+            font-size: 3vw;
+            margin-bottom: 2vh;
+            text-transform: uppercase;
+            transform: none;
+        }
+        p {
+            font-size: 1.7vw;
+            line-height: 1.5em;
+            margin: 0 0 2vh 0;
+        }
+    }
+    
+    .github-icon {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        bottom: 30px; left: 40px;
+    }
+}
