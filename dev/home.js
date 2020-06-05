@@ -1,5 +1,4 @@
 "use strict";
-// import './stylesheets/home.scss'
 import { scrollToPosition } from './utils/helpers'
 
 const viewport = document.querySelector(".viewport")

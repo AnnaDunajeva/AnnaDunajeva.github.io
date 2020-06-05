@@ -207,7 +207,7 @@ $parallax-perspective: 8px;
     .about-me-data-container {  
         margin: 0 auto;
         // margin-top: -28vh;
-        margin-top: -47vw;
+        margin-top: -18vw;
         width: 85vw;
         height: 52vh;
         display: block;
@@ -215,6 +215,7 @@ $parallax-perspective: 8px;
     .profile-img {
         object-fit: cover;
         width: inherit;
+        height: 80%;
     }
     .about-text {  
         background: var(--main-dark-color);  

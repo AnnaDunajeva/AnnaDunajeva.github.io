@@ -1,6 +1,6 @@
 module.exports = {
     entry: {
-        index: './dev/home.js'
+        home: './dev/home.js'
     },
     output: {
         filename: '[name].js',
