@@ -24,7 +24,7 @@ const setUpNavListeners = () => {
 
 const setUpScrollListeners = () => {
     viewport.addEventListener('scroll', () => {
-        console.log('prevScrollY ', prevScrollY,'scrollY ', viewport.scrollTop, 'onBotton ', onBotton, onTop, scrollableHight-viewport.scrollTop, windowHight)
+        console.log('prevScrollY ', prevScrollY,'scrollY ', viewport.scrollTop, 'onBotton ', onBotton, onTop, scrollableHight, windowHight)
         if (scrollableHight - viewport.scrollTop <= windowHight + 1) {
             onBotton = true
             onTop = false
