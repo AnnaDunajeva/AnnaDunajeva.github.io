@@ -71,11 +71,11 @@ body, html {
     word-spacing: 6px;
     // font-weight: bold;
     &:hover {
-        color: #ff0080;
-        text-shadow: 3px 3px 0px #3cf2ff; 
+        color: white;
+        text-shadow: 0.1em 0.1em 0px #3cf2ff, -0.1em -0.1em 0px #ff0080; 
 
-        color: var(--text-hover-color);
-        text-shadow: 3px 3px 0px var(--text-shadow-color); 
+        color: var(--text-color-white);
+        text-shadow: 0.1em 0.1em 0px var(--text-shadow-color), -0.1em -0.1em 0px var(--text-hover-color); 
     }
 }
 .flex-row-vertical-center {
@@ -104,11 +104,11 @@ body, html {
         text-transform: uppercase;
         
         &:hover {
-            color: #ff0080;
-            text-shadow: 3px 3px 0px #3cf2ff; 
+            color: white;
+            text-shadow: 0.1em 0.1em 0px #3cf2ff, -0.1em -0.1em 0px #ff0080; 
 
-            color: var(--text-hover-color);
-            text-shadow: 3px 3px 0px var(--text-shadow-color); 
+            color: var(--text-color-white);
+            text-shadow: 0.1em 0.1em 0px var(--text-shadow-color), -0.1em -0.1em 0px var(--text-hover-color); 
         }
     }
     a.logo {
