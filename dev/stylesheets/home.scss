@@ -103,10 +103,10 @@ $parallax-perspective: 8px;
     &:hover {
         cursor: pointer;
         fill: white;
-        filter: drop-shadow( 0.1em 0.1em 0px #3cf2ff) drop-shadow( -0.1em -0.1em 0px #ff0080);
+        filter: drop-shadow( 3px 0px 0px #3cf2ff) drop-shadow( -3px 0px 0px #ff0080);
 
         fill: var(--text-color-white);
-        filter: drop-shadow( 0.1em 0.1em 0px var(--text-shadow-color)) drop-shadow( -0.1em -0.1em 0px var(--text-hover-color));
+        filter: drop-shadow( 3px 0px 0px var(--text-shadow-color)) drop-shadow( -3px 0px 0px var(--text-hover-color));
     }
 }
 
