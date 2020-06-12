@@ -204,16 +204,16 @@ $parallax-perspective: 8px;
     }
     .parallax-about-me-container {
         transform: translateZ(5px) scale(parallax-scale-factor(5, $parallax-perspective));
-        height: 100vh;
-        margin-top: -106vh;
+        height: calc(100vh - 16vw);
+        margin-top: calc(-100vh + 16vw);
     }
     .about-me-data-container {  
         margin: 0 auto;
         // margin-top: -28vh;
         background-color: white;
-        margin-top: -12vw;
+        margin-top: -78vw;
         width: 85vw;
-        height: 77vw;
+        height: 78vw;
         display: block;
     }
     .profile-img {
