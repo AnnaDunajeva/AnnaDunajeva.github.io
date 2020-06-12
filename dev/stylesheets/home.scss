@@ -205,11 +205,12 @@ $parallax-perspective: 8px;
     .parallax-about-me-container {
         transform: translateZ(5px) scale(parallax-scale-factor(5, $parallax-perspective));
         height: 100vh;
-        margin-top: -104vh;
+        margin-top: -100vh;
     }
     .about-me-data-container {  
         margin: 0 auto;
         // margin-top: -28vh;
+        background-color: white;
         margin-top: -7vh;
         width: 85vw;
         height: 42vh;
