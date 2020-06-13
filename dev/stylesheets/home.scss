@@ -173,8 +173,7 @@ $parallax-perspective: 8px;
 @media only screen and (max-width: 500px) {
     .header-main {
         font-size: 13vw;
-        top: 0; left: 10px;
-    
+        top: 7vw; left: 7vw;
         h3 {    
             &:hover {
                 font-size: 15vw;
@@ -183,7 +182,6 @@ $parallax-perspective: 8px;
     }
     .parallax-about-me-container {
         background: var(--main-bg-color);
-        height: calc(100vh - 16vw);
     }
     .about-me-data-container {  
         margin: 0 auto;
