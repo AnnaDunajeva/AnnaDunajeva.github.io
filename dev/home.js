@@ -18,7 +18,7 @@ const updatePreviousScrollYPosition = (scrollY) => {
 const setUpNavListeners = () => {
     buttonAbout.addEventListener('click', () => {
         event.preventDefault();
-        scrollToPosition(viewport, windowHight)//idiotic solution to make sure it is scrolled to the bottom
+        scrollToPosition(viewport, windowHight + 200)//idiotic solution to make sure it is scrolled to the bottom
     })
 }
 
@@ -38,7 +38,7 @@ const setUpScrollListeners = () => {
         if (viewport.scrollTop > prevScrollY + 10 && !onBotton) {
             onBotton = true
             onTop = false
-            scrollToPosition(viewport, windowHight) //idiotic solution to make sure it is scrolled to the bottom
+            scrollToPosition(viewport, windowHight + 200) //idiotic solution to make sure it is scrolled to the bottom
         } else if (viewport.scrollTop < prevScrollY - 10 && !onTop) {
             onTop = true
             onBotton = false
