@@ -5,26 +5,17 @@
 }
 $parallax-perspective: 8px;
 
-.viewport {
-    perspective: $parallax-perspective;
-}
-.parallax-container {
-    transform-style: preserve-3d;
-}
+//no parallax by default
 
 .container-header {
-    transform: scale(1.6);
     position: relative;
-    // background-color: var(--main-dark-color);
     background: radial-gradient(circle, rgb(81, 48, 82) 0%, rgb(77, 41, 75) 4%, rgb(56, 35, 55) 12%, rgb(45, 34, 46) 27%, var(--main-dark-color) 100%);
-    // background: radial-gradient(circle, rgba(147,16,98,1) 0%, rgba(102,9,71,1) 4%, rgba(75,19,57,1) 12%, rgb(46, 30, 43) 27%, var(--main-dark-color) 100%);
 }
 .lines-bg {
     height: 100%;
     width: 100vw;
 }
 .header-main {
-    transform: translateZ(4px) scale(parallax-scale-factor(4, $parallax-perspective));
     font-size: 100px;
     position: absolute;
     top: -1vh; left: 0;
@@ -43,24 +34,16 @@ $parallax-perspective: 8px;
     }
 }
 .about-me-container {
-    transform: translateZ(5px) scale(parallax-scale-factor(5, $parallax-perspective));
-    margin-top: -30vh;
-    height: 100vh;
-    width: 100vw;
-    background: var(--main-bg-color);
+    display: none;
 }
 .parallax-about-me-container {
     height: 100vh;
     width: 100vw;
-    background: transparent;
-    transform: translateZ(6px) scale(parallax-scale-factor(6, $parallax-perspective));
-    margin-top: -100vh;
+    background: var(--main-bg-color);
 }
 .about-me-data-container {  
     margin: 0 auto;
     display: flex;
-    // width: 60vw;
-    // height: 35vw;
     width: 885px;
     height: 520px;
     background-color: var(--main-dark-color);
@@ -188,15 +171,7 @@ $parallax-perspective: 8px;
 
 //no parallax on mobile cause not working on iOS properly at all
 @media only screen and (max-width: 500px) {
-    .viewport {
-        perspective: 0px;
-    }
-    
-    .container-header {
-        transform: none;
-    }
     .header-main {
-        transform: none;
         font-size: 13vw;
         top: 0; left: 10px;
     
@@ -206,43 +181,37 @@ $parallax-perspective: 8px;
             }
         }
     }
-    .about-me-container {
-        display: none;
-    }
     .parallax-about-me-container {
         background: var(--main-bg-color);
         height: calc(100vh - 16vw);
-        width: 100vw;
-        transform: none;
-        margin-top: 0;
     }
     .about-me-data-container {  
         margin: 0 auto;
         width: 85vw;
+        height: 70%;
         flex-direction: column;
     }
     .profile-img {
         object-fit: cover;
         width: inherit;
-        height: 74vw;
+        height: 70vw;
     }
     .about-text {  
         background: var(--main-dark-color);  
         padding: 6vw;
         h3 {
             position: static;
-            font-size: 5.5vw;
-            margin-bottom: 4vw;
+            font-size: 5.2vw;
+            margin-bottom: 3.7vw;
             text-transform: uppercase;
             transform: none;
         }
         p {
-            font-size: 3.6vw;
-            line-height: 1.5em;
+            font-size: 3.3vw;
+            line-height: 1.3em;
             margin: 0 0 4vw 0;
         }
-    }
-    
+    }   
     .github-icon {
         height: 30px;
         width: 30px;
@@ -268,7 +237,6 @@ $parallax-perspective: 8px;
 @media only screen and (min-width: 501px) and (max-width: 1000px) {
     .header-main {
         font-size: 9vw;
-    
         h3 {    
             &:hover {
                 font-size: 11vw;
@@ -278,6 +246,7 @@ $parallax-perspective: 8px;
     .about-me-data-container {  
         width: 80vw;
         height: 50vw;
+        margin: 0 auto;
     }
     .profile-img {
         object-fit: cover;
@@ -338,5 +307,35 @@ $parallax-perspective: 8px;
         width: 40px;
         position: absolute;
         bottom: 30px; left: 40px;
+    }
+}
+
+//add parallax
+@media only screen and (min-width: 1201px) {
+    .viewport {
+        perspective: $parallax-perspective;
+    }
+    .parallax-container {
+        transform-style: preserve-3d;
+    }
+    
+    .container-header {
+        transform: scale(1.6);
+    }
+    .header-main {
+        transform: translateZ(4px) scale(parallax-scale-factor(4, $parallax-perspective));
+    }
+    .about-me-container {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+        background: var(--main-bg-color);
+        transform: translateZ(5px) scale(parallax-scale-factor(5, $parallax-perspective));
+        margin-top: -30vh;
+    }
+    .parallax-about-me-container {
+        background: transparent;
+        transform: translateZ(6px) scale(parallax-scale-factor(6, $parallax-perspective));
+        margin-top: -100vh;
     }
 }

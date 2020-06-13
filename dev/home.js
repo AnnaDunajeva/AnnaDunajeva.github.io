@@ -50,6 +50,6 @@ const setUpScrollListeners = () => {
 setUpNavListeners()
 
 //trying not to do this on mobile devices, cause does not work very smoothly (but tablets are a problem because of their width)
-if (viewport.offsetWidth > 900) {
+if (viewport.offsetWidth > 1100) {
     setUpScrollListeners()
 }
