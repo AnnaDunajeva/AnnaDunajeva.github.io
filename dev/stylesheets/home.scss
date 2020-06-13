@@ -186,7 +186,7 @@ $parallax-perspective: 8px;
     }
 }
 
-//no parallax on mobile
+//no parallax on mobile cause not working on iOS properly at all
 @media only screen and (max-width: 500px) {
     .viewport {
         perspective: 0px;
@@ -219,13 +219,12 @@ $parallax-perspective: 8px;
     .about-me-data-container {  
         margin: 0 auto;
         width: 85vw;
-        height: 80%;
         flex-direction: column;
     }
     .profile-img {
         object-fit: cover;
         width: inherit;
-        height: 78vw;
+        height: 74vw;
     }
     .about-text {  
         background: var(--main-dark-color);  
@@ -263,77 +262,9 @@ $parallax-perspective: 8px;
             animation: glitch-effect-mobile 3s infinite linear alternate-reverse;
         }
     }
-    // .header-main {
-    //     font-size: 13vw;
-    //     top: -1vh; left: 10px;
-    
-    //     h3 {    
-    //         &:hover {
-    //             font-size: 15vw;
-    //         }
-    //     }
-    // }
-    // .about-me-container {
-    //     transform: translateZ(4px) scale(parallax-scale-factor(4, $parallax-perspective));
-    //     margin-top: 0vh;
-    //     height: 100vh;
-    // }
-    // .parallax-about-me-container {
-    //     transform: translateZ(5px) scale(parallax-scale-factor(5, $parallax-perspective));
-    //     height: calc(100vh - 16vw);
-    //     margin-top: calc(-100vh + 16vw);
-    // }
-    // .about-me-data-container {  
-    //     margin: 0 auto;
-    //     // margin-top: -28vh;
-    //     background-color: white;
-    //     margin-top: -78vw;
-    //     width: 85vw;
-    //     height: 78vw;
-    //     display: block;
-    // }
-    // .profile-img {
-    //     object-fit: cover;
-    //     width: inherit;
-    // }
-    // .about-text {  
-    //     background: var(--main-dark-color);  
-    //     padding: 3vh;
-    //     h3 {
-    //         position: static;
-    //         font-size: 5.5vw;
-    //         margin-bottom: 2vh;
-    //         text-transform: uppercase;
-    //         transform: none;
-    //     }
-    //     p {
-    //         font-size: 3.6vw;
-    //         line-height: 1.5em;
-    //         margin: 0 0 2vh 0;
-    //     }
-    // }
-    
-    // .github-icon {
-    //     height: 30px;
-    //     width: 30px;
-    //     fill: var(--text-color-white);
-    //     position: static;
-    // }
-    // .glitch {
-    //     &::before {
-    //         left: 2px;
-    //         text-shadow: 3px 0 #105bb1;
-    //         animation: glitch-effect-mobile 4s infinite linear alternate-reverse;
-    //     }
-    
-    //     &::after {
-    //         left: 1px;
-    //         text-shadow: -3px 0 var(--text-hover-color);
-    //         animation: glitch-effect-mobile 3s infinite linear alternate-reverse;
-    //     }
-    // }
 }
 
+//not parallax on tablet cause not working on iOS properly at all
 @media only screen and (min-width: 501px) and (max-width: 1000px) {
     .header-main {
         font-size: 9vw;
