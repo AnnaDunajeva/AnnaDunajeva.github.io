@@ -1,5 +1,9 @@
 "use strict";
+import smoothscroll from 'smoothscroll-polyfill';
 import { scrollToPosition } from './utils/helpers'
+
+//scroll-behaviour has only been implemented in Chrome, Firefox and Opera.
+smoothscroll.polyfill();
 
 const viewport = document.querySelector(".viewport")
 
