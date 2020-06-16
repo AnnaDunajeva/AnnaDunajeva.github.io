@@ -11,6 +11,8 @@ html {
     --main-bg-color: #867885;
     --text-hover-color: #ff0080;
     --text-shadow-color: #3cf2ff;
+    --glitch-color-1: #ff0000;
+    --glitch-color-2: #00e732;
     --light-grey-purple: #aeabb3;
     --text-color-white: #d7d1db;
     --container-shadow: 11px 17px 49px -4px rgba(0,0,0,0.6);
@@ -72,10 +74,10 @@ body, html {
     &:hover {
         font-weight: 400;
         color: white;
-        text-shadow: 0.1em 0px 0px #3cf2ff, -0.1em 0px 0px #ff0080; 
+        text-shadow: 0.1em 0px 0px #3cf2ff, -0.1em 0px 0px #ff0080, -1px -2px 0px rgb(230, 54, 0), 1px 2px 0px rgb(255, 238, 0);
 
         color: var(--text-color-white);
-        text-shadow: 0.09em 0px 0px var(--text-shadow-color), -0.09em 0px 0px var(--text-hover-color); 
+        text-shadow: 0.09em 0px 0px var(--text-shadow-color), -0.09em 0px 0px var(--text-hover-color), 0.06em 0.06em 0px var(--glitch-color-1), -0.06em -0.06em 0px var(--glitch-color-2);
     }
 }
 .flex-row-vertical-center {
@@ -105,10 +107,10 @@ body, html {
         
         &:hover {
             color: white;
-            text-shadow: 0.11em 0px 0px #3cf2ff, -0.11em 0px 0px #ff0080; 
+            text-shadow: 0.11em 0px 0px #3cf2ff, -0.11em 0px 0px #ff0080, -1px -2px 0px rgb(230, 54, 0), 1px 2px 0px rgb(255, 238, 0); 
 
             color: var(--text-color-white);
-            text-shadow: 0.11em 0px 0px var(--text-shadow-color), -0.11em 0px 0px var(--text-hover-color); 
+            text-shadow: 0.11em 0px 0px var(--text-shadow-color), -0.11em 0px 0px var(--text-hover-color), -0.06em -0.06em 0px var(--glitch-color-2), 0.06em 0.06em 0px var(--glitch-color-1); 
         }
     }
     a.logo {
