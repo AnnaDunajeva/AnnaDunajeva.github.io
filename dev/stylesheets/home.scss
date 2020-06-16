@@ -337,3 +337,24 @@ $parallax-perspective: 8px;
         margin-top: -100vh;
     }
 }
+
+@supports (-moz-appearance:meterbar) {
+    //no parallax in mozilla cause ugly
+    .viewport {
+        perspective: 0px;
+    }  
+    .container-header {
+        transform: none;
+    }
+    .header-main {
+        transform: none;
+    }
+    .about-me-container {
+        display: none;
+    }
+    .parallax-about-me-container {
+        background: var(--main-bg-color);
+        transform: none;
+        margin-top: 0;
+    }
+}
