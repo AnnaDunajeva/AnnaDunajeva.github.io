@@ -97,6 +97,9 @@ body, html {
     
     button,
     a {
+        display: flex;
+        align-items: center;
+        height: 100%;
         border: none;
         background-color: transparent;
         text-decoration: none;
@@ -120,6 +123,9 @@ body, html {
     button:focus {
         cursor: pointer;
         outline: none;
+    }
+    >div {
+        height: 100%;
     }
 }
 .container-first {
