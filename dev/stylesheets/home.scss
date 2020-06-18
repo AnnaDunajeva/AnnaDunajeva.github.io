@@ -96,7 +96,7 @@ $parallax-perspective: 8px;
         filter: drop-shadow( 3px 0px 0px #3cf2ff) drop-shadow( -3px 0px 0px #ff0080);
 
         fill: var(--text-color-white);
-        filter: drop-shadow( 3px 0px 0px var(--text-shadow-color)) drop-shadow( -3px 0px 0px var(--text-hover-color)) drop-shadow(-0.06em -0.06em 0px var(--glitch-color-2)) drop-shadow(0.06em 0.06em 0px var(--glitch-color-1));
+        filter: drop-shadow(-1px -3px 0px var(--glitch-color-2)) drop-shadow(1px 3px 0px var(--glitch-color-1)) drop-shadow( 3px 0px 0px var(--text-shadow-color)) drop-shadow( -3px 0px 0px var(--text-hover-color));
     }
 }
 
